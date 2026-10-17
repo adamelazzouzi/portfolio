@@ -29,6 +29,21 @@ export const proyectos = [
         ],
         url: 'https://quevedle.pages.dev',
         repo: 'https://github.com/adamelazzouzi/quevedle'
+    },
+    {
+    id: 'la-panterle',
+    nombre: 'La Panterle',
+    descripcionCorta: 'Juego online para adivinar las canciones de La Pantera. 5 canciones, 15 segundos cada una.',
+    descripcionLarga: 'La Panterle es un juego web que pone a prueba tu conocimiento del catálogo de La Pantera. En cada partida se escuchan 5 fragmentos de 5 segundos de canciones aleatorias y tienes que adivinarlas buscando su título. Con 20 canciones (singles, EPs y colaboraciones), cada partida es distinta. Sin registro, sin instalación, sin distracciones. Incluye una Panterlex para coleccionar las canciones que vas desbloqueando.',
+    stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+    año: 2026,
+    capturasCarrusel: [
+        'assets/capturas/lp-pantera.jpg',
+        'assets/capturas/lp-stone.jpg',
+        'assets/capturas/lp-tafacil.jpg'
+    ],
+    url: 'https://la-panterle.pages.dev',
+    repo: 'https://github.com/adamelazzouzi/la-panterle'
     }
 
     // ============================================
