@@ -44,5 +44,20 @@ export const proyectos = [
         ],
         url: 'https://la-panterle.pages.dev',
         repo: 'https://github.com/adamelazzouzi/la-panterle'
+    },
+    {
+        id: 'lucho-rkle',
+        nombre: 'Lucho RKle',
+        descripcionCorta: 'Juego online para adivinar las canciones de Lucho RK. 3 niveles de audio, 10 rondas.',
+        descripcionLarga: 'Lucho RKle es un juego web que pone a prueba tu conocimiento del catálogo de Lucho RK. En cada partida se escuchan 10 fragmentos de canciones aleatorias, pero con un giro: empiezas con solo 1 segundo de audio, y puedes pasar a 3 o 5 segundos si no aciertas. Cuanto antes aciertes, más puntos. Con 50 canciones de su álbum debut (SORDO DE UN PIE), sus EPs (TA FACIL, QUIÉN ESTÁ AQUÍ?) y sus singles y colaboraciones, cada partida es distinta. Sin registro y sin instalación. Incluye una Lucho RKlex para coleccionar las canciones que vas desbloqueando.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [
+            'assets/capturas/lr-rk.jpg',
+            'assets/capturas/lr-sordo.jpg',
+            'assets/capturas/lr-tafacil.jpg'
+        ],
+        url: 'https://lucho-rkle.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/lucho-rkle'
     }
 ];
