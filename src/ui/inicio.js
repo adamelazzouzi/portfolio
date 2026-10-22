@@ -7,7 +7,7 @@ import { proyectos } from '../data/proyectos.js';
 // ============================================
 // CONFIGURACIÓN DEL CARRUSEL
 // ============================================
-const CARRUSEL_INTERVALO = 3000; // 3 segundos
+const CARRUSEL_INTERVALO = 3000;
 
 // ============================================
 // MONTAR INICIO
@@ -39,6 +39,13 @@ export function montarInicio(contenedor) {
     contenedor.querySelectorAll('.proyecto-card').forEach(card => {
         card.addEventListener('click', () => {
             const id = card.getAttribute('data-id');
+            const disponible = card.getAttribute('data-disponible') !== 'false';
+
+            if (!disponible) {
+                mostrarToast('Próximamente');
+                return;
+            }
+
             window.location.href = `proyecto.html?id=${id}`;
         });
     });
@@ -48,8 +55,9 @@ export function montarInicio(contenedor) {
 // RENDERIZAR UN PROYECTO (tarjeta)
 // ============================================
 function renderizarProyecto(proyecto) {
-    // Si tiene capturas de carrusel, mostramos el carrusel
-    // Si no, mostramos la captura estática
+    const bloqueado = proyecto.disponible === false;
+
+    // Visual: carrusel o imagen estática
     let visualHTML;
     if (proyecto.capturasCarrusel && proyecto.capturasCarrusel.length > 0) {
         visualHTML = `
@@ -59,18 +67,22 @@ function renderizarProyecto(proyecto) {
                         <img src="${src}" alt="${proyecto.nombre}" ${i === 0 ? 'class="activa"' : ''}>
                     `).join('')}
                 </div>
+                ${bloqueado ? '<div class="proyecto-candado">🔒</div>' : ''}
             </div>
         `;
     } else {
         visualHTML = `
             <div class="proyecto-visual">
                 <img src="${proyecto.capturaInicio}" alt="${proyecto.nombre}" class="proyecto-imagen">
+                ${bloqueado ? '<div class="proyecto-candado">🔒</div>' : ''}
             </div>
         `;
     }
 
     return `
-        <article class="proyecto-card" data-id="${proyecto.id}">
+        <article class="proyecto-card ${bloqueado ? 'proyecto-card-bloqueado' : ''}"
+                 data-id="${proyecto.id}"
+                 data-disponible="${proyecto.disponible !== false}">
             ${visualHTML}
 
             <div class="proyecto-info">
@@ -82,6 +94,7 @@ function renderizarProyecto(proyecto) {
                 <div class="proyecto-stack">
                     ${proyecto.stack.map(tech => `<span class="stack-tag">${tech}</span>`).join('')}
                 </div>
+                ${bloqueado ? '<p class="proyecto-bloqueado-texto">Próximamente</p>' : ''}
             </div>
         </article>
     `;
@@ -93,11 +106,9 @@ function renderizarProyecto(proyecto) {
 let intervalosCarrusel = [];
 
 function iniciarCarruseles() {
-    // Limpiar intervalos anteriores
     intervalosCarrusel.forEach(id => clearInterval(id));
     intervalosCarrusel = [];
 
-    // Para cada carrusel en la página
     document.querySelectorAll('.proyecto-carrusel').forEach(carrusel => {
         const imagenes = carrusel.querySelectorAll('img');
         if (imagenes.length === 0) return;
@@ -112,4 +123,38 @@ function iniciarCarruseles() {
 
         intervalosCarrusel.push(interval);
     });
+}
+
+// ============================================
+// TOAST
+// ============================================
+let toastTimeout = null;
+
+function mostrarToast(texto) {
+    // Eliminar toast anterior si existe
+    const anterior = document.getElementById('toast');
+    if (anterior) anterior.remove();
+
+    if (toastTimeout) {
+        clearTimeout(toastTimeout);
+        toastTimeout = null;
+    }
+
+    // Crear toast
+    const toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.className = 'toast';
+    toast.textContent = texto;
+    document.body.appendChild(toast);
+
+    // Animación de entrada
+    requestAnimationFrame(() => {
+        toast.classList.add('toast-visible');
+    });
+
+    // Auto-eliminar a los 2.5s
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('toast-visible');
+        setTimeout(() => toast.remove(), 300);
+    }, 2500);
 }

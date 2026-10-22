@@ -8,10 +8,13 @@
 //
 // Campos obligatorios:
 //   id, nombre, descripcionCorta, descripcionLarga,
-//   stack, año, capturasCarrusel, url
+//   stack, año, capturasCarrusel, url, disponible
 //
 // Campos opcionales:
 //   repo (link a GitHub)
+//
+// Si disponible: false → la tarjeta se muestra bloqueada
+// y al pulsar sale un toast "Próximamente".
 // ============================================
 
 export const proyectos = [
@@ -28,7 +31,8 @@ export const proyectos = [
             'assets/capturas/eb.jpg'
         ],
         url: 'https://quevedle.pages.dev',
-        repo: 'https://github.com/adamelazzouzi/quevedle'
+        repo: 'https://github.com/adamelazzouzi/quevedle',
+        disponible: true
     },
     {
         id: 'la-panterle',
@@ -43,7 +47,8 @@ export const proyectos = [
             'assets/capturas/lp-tafacil.jpg'
         ],
         url: 'https://la-panterle.pages.dev',
-        repo: 'https://github.com/adamelazzouzi/la-panterle'
+        repo: 'https://github.com/adamelazzouzi/la-panterle',
+        disponible: true
     },
     {
         id: 'lucho-rkle',
@@ -58,6 +63,7 @@ export const proyectos = [
             'assets/capturas/lr-tafacil.jpg'
         ],
         url: 'https://lucho-rkle.pages.dev',
-        repo: 'https://github.com/adamelazzouzi/lucho-rkle'
+        repo: 'https://github.com/adamelazzouzi/lucho-rkle',
+        disponible: false
     }
 ];

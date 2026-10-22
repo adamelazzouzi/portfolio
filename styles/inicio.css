@@ -2,9 +2,7 @@
    HOME DEL PORTFOLIO
    ============================================ */
 
-/* ============================================
-   HEADER
-   ============================================ */
+/* Header */
 .inicio-header {
     padding: var(--esp-10) 0 var(--esp-12);
     border-bottom: 1px solid var(--gris-850);
@@ -31,9 +29,7 @@
     letter-spacing: 3px;
 }
 
-/* ============================================
-   SECCIÓN DE PROYECTOS
-   ============================================ */
+/* Sección de proyectos */
 .inicio-proyectos {
     flex: 1;
     margin-bottom: var(--esp-10);
@@ -54,9 +50,7 @@
     gap: var(--esp-6);
 }
 
-/* ============================================
-   TARJETA DE PROYECTO
-   ============================================ */
+/* Tarjeta de proyecto */
 .proyecto-card {
     background: var(--gris-950);
     border: 1px solid var(--gris-850);
@@ -76,9 +70,19 @@
     opacity: 0.9;
 }
 
-/* ============================================
-   VISUAL (carrusel o imagen)
-   ============================================ */
+/* Tarjeta bloqueada */
+.proyecto-card-bloqueado {
+    opacity: 0.6;
+    cursor: pointer;
+    filter: grayscale(0.6);
+}
+
+.proyecto-card-bloqueado:hover {
+    opacity: 0.75;
+    filter: grayscale(0.4);
+}
+
+/* Visual (carrusel o imagen) */
 .proyecto-visual {
     position: relative;
     width: 100%;
@@ -93,6 +97,24 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Candado en tarjeta bloqueada */
+.proyecto-candado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
 }
 
 /* Carrusel */
@@ -117,9 +139,7 @@
     opacity: 1;
 }
 
-/* ============================================
-   INFO DEL PROYECTO
-   ============================================ */
+/* Info del proyecto */
 .proyecto-info {
     padding: var(--esp-5);
 }
@@ -154,9 +174,7 @@
     margin-bottom: var(--esp-4);
 }
 
-/* ============================================
-   STACK (tags)
-   ============================================ */
+/* Stack (tags) */
 .proyecto-stack {
     display: flex;
     flex-wrap: wrap;
@@ -175,9 +193,19 @@
     color: var(--gris-400);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+/* Texto "Próximamente" en tarjeta bloqueada */
+.proyecto-bloqueado-texto {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--aviso);
+    margin-top: var(--esp-3);
+    padding-top: var(--esp-3);
+    border-top: 1px solid var(--gris-800);
+}
+
+/* Footer */
 .inicio-footer {
     padding-top: var(--esp-6);
     border-top: 1px solid var(--gris-850);
@@ -187,6 +215,34 @@
 .inicio-footer p {
     font-size: 12px;
     color: var(--gris-500);
+}
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--gris-800);
+    color: var(--blanco);
+    padding: 14px 24px;
+    border-radius: var(--radio-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    pointer-events: none;
+    max-width: 90vw;
+    text-align: center;
+}
+
+.toast-visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
 }
 
 /* ============================================
