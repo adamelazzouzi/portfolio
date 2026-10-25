@@ -64,6 +64,6 @@ export const proyectos = [
         ],
         url: 'https://lucho-rkle.pages.dev',
         repo: 'https://github.com/adamelazzouzi/lucho-rkle',
-        disponible: false
+        disponible: true
     }
 ];
