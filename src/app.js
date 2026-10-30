@@ -11,15 +11,14 @@ import { montarProyecto } from './ui/proyecto.js';
 document.addEventListener('DOMContentLoaded', () => {
     const app = document.getElementById('app');
 
-    // Detectar página por el nombre del archivo
-    const path = window.location.pathname;
-    const archivo = path.substring(path.lastIndexOf('/') + 1);
+    // Detectar página por el nombre del archivo (sin extensión, por si Cloudflare la quita)
+    const path = window.location.pathname.toLowerCase();
 
-    if (archivo === 'minijuegos.html') {
+    if (path.includes('minijuegos')) {
         montarMinijuegos(app);
-    } else if (archivo === 'practicas.html') {
+    } else if (path.includes('practicas')) {
         montarPracticas(app);
-    } else if (archivo === 'proyecto.html') {
+    } else if (path.includes('proyecto')) {
         const params = new URLSearchParams(window.location.search);
         const proyectoId = params.get('id');
         montarProyecto(app, proyectoId);
