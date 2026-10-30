@@ -7,11 +7,10 @@
 // 3. Listo
 //
 // Campos obligatorios:
-//   id, nombre, descripcionCorta, descripcionLarga,
+//   id, tipo, nombre, descripcionCorta, descripcionLarga,
 //   stack, año, capturasCarrusel, url, disponible
 //
-// Campos opcionales:
-//   repo (link a GitHub)
+// tipo: 'juego' | 'practica'
 //
 // Si disponible: false → la tarjeta se muestra bloqueada
 // y al pulsar sale un toast "Próximamente".
@@ -20,6 +19,7 @@
 export const proyectos = [
     {
         id: 'quevedle',
+        tipo: 'juego',
         nombre: 'Quevedle',
         descripcionCorta: 'Juego online para adivinar las canciones de Quevedo. 10 canciones, 10 segundos cada una.',
         descripcionLarga: 'Quevedle es un juego web que pone a prueba tu conocimiento del catálogo de Quevedo. En cada partida se escuchan 10 fragmentos de 5 segundos de canciones aleatorias y tienes que adivinar cuál es. Con 48 canciones de sus 3 álbumes (Donde Quiero Estar, Buenas Noches y El Baifo), cada partida es distinta. Sin registro y sin instalación. Incluye una Quevedex para coleccionar las canciones que vas desbloqueando.',
@@ -36,6 +36,7 @@ export const proyectos = [
     },
     {
         id: 'la-panterle',
+        tipo: 'juego',
         nombre: 'La Panterle',
         descripcionCorta: 'Juego online para adivinar las canciones de La Pantera. 5 canciones, 15 segundos cada una.',
         descripcionLarga: 'La Panterle es un juego web que pone a prueba tu conocimiento del catálogo de La Pantera. En cada partida se escuchan 5 fragmentos de 5 segundos de canciones aleatorias y tienes que adivinarlas buscando su título. Con 20 canciones (singles, EPs y colaboraciones), cada partida es distinta. Sin registro y sin instalación. Incluye una Panterlex para coleccionar las canciones que vas desbloqueando.',
@@ -52,6 +53,7 @@ export const proyectos = [
     },
     {
         id: 'lucho-rkle',
+        tipo: 'juego',
         nombre: 'Lucho RKle',
         descripcionCorta: 'Juego online para adivinar las canciones de Lucho RK. 3 niveles de audio, 10 rondas.',
         descripcionLarga: 'Lucho RKle es un juego web que pone a prueba tu conocimiento del catálogo de Lucho RK. En cada partida se escuchan 10 fragmentos de canciones aleatorias, pero con un giro: empiezas con solo 1 segundo de audio, y puedes pasar a 3 o 5 segundos si no aciertas. Cuanto antes aciertes, más puntos. Con 50 canciones de su álbum debut (SORDO DE UN PIE), sus EPs (TA FACIL, QUIÉN ESTÁ AQUÍ?) y sus singles y colaboraciones, cada partida es distinta. Sin registro y sin instalación. Incluye una Lucho RKlex para coleccionar las canciones que vas desbloqueando.',
@@ -66,4 +68,8 @@ export const proyectos = [
         repo: 'https://github.com/adamelazzouzi/lucho-rkle',
         disponible: true
     }
+
+    // ============================================
+    // PRÁCTICAS DE WEBS (se añadirán aquí con tipo: 'practica')
+    // ============================================
 ];

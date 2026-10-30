@@ -1,17 +1,8 @@
 // ============================================
 // UI - PANTALLA DE INICIO DEL PORTFOLIO
+// Home con 2 tarjetas grandes: Minijuegos y Prácticas de Webs
 // ============================================
 
-import { proyectos } from '../data/proyectos.js';
-
-// ============================================
-// CONFIGURACIÓN DEL CARRUSEL
-// ============================================
-const CARRUSEL_INTERVALO = 3000;
-
-// ============================================
-// MONTAR INICIO
-// ============================================
 export function montarInicio(contenedor) {
     contenedor.innerHTML = `
         <header class="inicio-header">
@@ -19,142 +10,39 @@ export function montarInicio(contenedor) {
             <p class="inicio-subtitulo">Desarrollador web</p>
         </header>
 
-        <main class="inicio-proyectos">
-            <h2 class="inicio-seccion-titulo">Proyectos</h2>
+        <main class="inicio-secciones">
+            <a href="minijuegos.html" class="seccion-card">
+                <div class="seccion-icono">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="30" width="90" height="50" rx="25" stroke="currentColor" stroke-width="4"/>
+                        <circle cx="30" cy="55" r="6" fill="currentColor"/>
+                        <circle cx="70" cy="45" r="4" fill="currentColor"/>
+                        <circle cx="80" cy="55" r="4" fill="currentColor"/>
+                        <circle cx="70" cy="65" r="4" fill="currentColor"/>
+                        <circle cx="60" cy="55" r="4" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h2 class="seccion-titulo">Minijuegos</h2>
+                <p class="seccion-descripcion">Juegos interactivos para adivinar canciones de tus artistas favoritos.</p>
+            </a>
 
-            <div class="proyectos-grid">
-                ${proyectos.map(proyecto => renderizarProyecto(proyecto)).join('')}
-            </div>
+            <a href="practicas.html" class="seccion-card">
+                <div class="seccion-icono">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="4"/>
+                        <ellipse cx="50" cy="50" rx="15" ry="40" stroke="currentColor" stroke-width="3"/>
+                        <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="3"/>
+                        <path d="M 20 30 Q 50 40 80 30" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M 20 70 Q 50 60 80 70" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h2 class="seccion-titulo">Prácticas de Webs</h2>
+                <p class="seccion-descripcion">Webs para negocios ficticios. Diseño y desarrollo desde cero.</p>
+            </a>
         </main>
 
         <footer class="inicio-footer">
             <p>Proyecto personal. Construido sin frameworks, sin dependencias.</p>
         </footer>
     `;
-
-    // Arrancar carruseles
-    iniciarCarruseles();
-
-    // Conectar clicks en las tarjetas
-    contenedor.querySelectorAll('.proyecto-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const id = card.getAttribute('data-id');
-            const disponible = card.getAttribute('data-disponible') !== 'false';
-
-            if (!disponible) {
-                mostrarToast('Próximamente');
-                return;
-            }
-
-            window.location.href = `proyecto.html?id=${id}`;
-        });
-    });
-}
-
-// ============================================
-// RENDERIZAR UN PROYECTO (tarjeta)
-// ============================================
-function renderizarProyecto(proyecto) {
-    const bloqueado = proyecto.disponible === false;
-
-    // Visual: carrusel o imagen estática
-    let visualHTML;
-    if (proyecto.capturasCarrusel && proyecto.capturasCarrusel.length > 0) {
-        visualHTML = `
-            <div class="proyecto-visual">
-                <div class="proyecto-carrusel" data-carrusel="${proyecto.id}">
-                    ${proyecto.capturasCarrusel.map((src, i) => `
-                        <img src="${src}" alt="${proyecto.nombre}" ${i === 0 ? 'class="activa"' : ''}>
-                    `).join('')}
-                </div>
-                ${bloqueado ? '<div class="proyecto-candado">🔒</div>' : ''}
-            </div>
-        `;
-    } else {
-        visualHTML = `
-            <div class="proyecto-visual">
-                <img src="${proyecto.capturaInicio}" alt="${proyecto.nombre}" class="proyecto-imagen">
-                ${bloqueado ? '<div class="proyecto-candado">🔒</div>' : ''}
-            </div>
-        `;
-    }
-
-    return `
-        <article class="proyecto-card ${bloqueado ? 'proyecto-card-bloqueado' : ''}"
-                 data-id="${proyecto.id}"
-                 data-disponible="${proyecto.disponible !== false}">
-            ${visualHTML}
-
-            <div class="proyecto-info">
-                <div class="proyecto-header">
-                    <h3 class="proyecto-nombre">${proyecto.nombre}</h3>
-                    <span class="proyecto-año">${proyecto.año}</span>
-                </div>
-                <p class="proyecto-descripcion">${proyecto.descripcionCorta}</p>
-                <div class="proyecto-stack">
-                    ${proyecto.stack.map(tech => `<span class="stack-tag">${tech}</span>`).join('')}
-                </div>
-                ${bloqueado ? '<p class="proyecto-bloqueado-texto">Próximamente</p>' : ''}
-            </div>
-        </article>
-    `;
-}
-
-// ============================================
-// CARRUSELES
-// ============================================
-let intervalosCarrusel = [];
-
-function iniciarCarruseles() {
-    intervalosCarrusel.forEach(id => clearInterval(id));
-    intervalosCarrusel = [];
-
-    document.querySelectorAll('.proyecto-carrusel').forEach(carrusel => {
-        const imagenes = carrusel.querySelectorAll('img');
-        if (imagenes.length === 0) return;
-
-        let indiceActual = 0;
-
-        const interval = setInterval(() => {
-            imagenes[indiceActual].classList.remove('activa');
-            indiceActual = (indiceActual + 1) % imagenes.length;
-            imagenes[indiceActual].classList.add('activa');
-        }, CARRUSEL_INTERVALO);
-
-        intervalosCarrusel.push(interval);
-    });
-}
-
-// ============================================
-// TOAST
-// ============================================
-let toastTimeout = null;
-
-function mostrarToast(texto) {
-    // Eliminar toast anterior si existe
-    const anterior = document.getElementById('toast');
-    if (anterior) anterior.remove();
-
-    if (toastTimeout) {
-        clearTimeout(toastTimeout);
-        toastTimeout = null;
-    }
-
-    // Crear toast
-    const toast = document.createElement('div');
-    toast.id = 'toast';
-    toast.className = 'toast';
-    toast.textContent = texto;
-    document.body.appendChild(toast);
-
-    // Animación de entrada
-    requestAnimationFrame(() => {
-        toast.classList.add('toast-visible');
-    });
-
-    // Auto-eliminar a los 2.5s
-    toastTimeout = setTimeout(() => {
-        toast.classList.remove('toast-visible');
-        setTimeout(() => toast.remove(), 300);
-    }, 2500);
 }
