@@ -67,9 +67,19 @@ export const proyectos = [
         url: 'https://lucho-rkle.pages.dev',
         repo: 'https://github.com/adamelazzouzi/lucho-rkle',
         disponible: true
-    }
+    },
 
-    // ============================================
-    // PRÁCTICAS DE WEBS (se añadirán aquí con tipo: 'practica')
-    // ============================================
+    {
+        id: 'la-hilandera',
+        tipo: 'practica',
+        nombre: 'La Hilandera',
+        descripcionCorta: 'Web de una librería-cafetería ficticia en Villanueva del Río (Zamora). Diseño artesanal y cálido.',
+        descripcionLarga: 'La Hilandera es una web de una librería-cafetería ficticia situada en Villanueva del Río, Zamora. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una librería de pueblo con cafetería y taller de encuadernación artesanal. Incluye una one-page completa con hero, sobre nosotros, productos, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://la-hilandera.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/la-hilandera',
+        disponible: true
+    }
 ];

@@ -183,3 +183,96 @@
         padding: var(--esp-4);
     }
 }
+
+/* ============================================
+   TARJETA RECTANGULAR PARA PRÁCTICAS
+   ============================================ */
+.practicas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--esp-5);
+    margin-bottom: var(--esp-10);
+}
+
+.proyecto-card-practica {
+    background: var(--gris-950);
+    border: 1px solid var(--gris-850);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transicion);
+    padding: var(--esp-6);
+    display: flex;
+    align-items: center;
+}
+
+.proyecto-card-practica:hover {
+    border-color: var(--gris-600);
+    background: var(--gris-900);
+    transform: translateY(-4px);
+}
+
+.proyecto-info-practica {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-2);
+    width: 100%;
+}
+
+.proyecto-header-practica {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--esp-3);
+}
+
+.proyecto-info-practica .proyecto-nombre {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--blanco);
+    margin: 0;
+}
+
+.proyecto-info-practica .proyecto-año {
+    font-family: var(--fuente-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gris-500);
+    flex-shrink: 0;
+}
+
+.proyecto-info-practica .proyecto-descripcion {
+    font-size: 14px;
+    color: var(--gris-300);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.proyecto-ver {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gris-400);
+    margin-top: var(--esp-3);
+    transition: color var(--transicion);
+}
+
+.proyecto-card-practica:hover .proyecto-ver {
+    color: var(--blanco);
+}
+
+@media (min-width: 700px) {
+    .practicas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .proyecto-card-practica {
+        padding: var(--esp-5);
+    }
+
+    .proyecto-info-practica .proyecto-nombre {
+        font-size: 20px;
+    }
+}

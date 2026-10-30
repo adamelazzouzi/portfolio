@@ -33,25 +33,37 @@ export function montarProyecto(contenedor, proyectoId) {
     // Actualizar título de la pestaña
     document.title = `${proyecto.nombre} · Adam El Azzouzi`;
 
-    // Visual: carrusel con las portadas del proyecto
-    const visualHTML = `
-        <div class="proyecto-banner-visual">
-            <div class="proyecto-banner-carrusel" id="proyectoBannerCarrusel">
-                ${proyecto.capturasCarrusel.map((src, i) => `
-                    <img src="${src}" alt="${proyecto.nombre}" ${i === 0 ? 'class="activa"' : ''}>
-                `).join('')}
+    // Determinar a qué sección volver
+    const esPractica = proyecto.tipo === 'practica';
+    const urlVolver = esPractica ? 'practicas.html' : 'minijuegos.html';
+    const textoVolver = esPractica ? 'Prácticas' : 'Minijuegos';
+
+    // Visual: carrusel solo si hay imágenes. Si no, no mostramos banner.
+    let visualHTML = '';
+    const tieneVisual = proyecto.capturasCarrusel && proyecto.capturasCarrusel.length > 0;
+
+    if (tieneVisual) {
+        visualHTML = `
+            <div class="proyecto-banner-visual">
+                <div class="proyecto-banner-carrusel" id="proyectoBannerCarrusel">
+                    ${proyecto.capturasCarrusel.map((src, i) => `
+                        <img src="${src}" alt="${proyecto.nombre}" ${i === 0 ? 'class="activa"' : ''}>
+                    `).join('')}
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    }
+
+    const bannerClass = tieneVisual ? 'proyecto-banner' : 'proyecto-banner proyecto-banner-sin-visual';
 
     // Renderizar
     contenedor.innerHTML = `
         <header class="proyecto-header">
-            <a href="index.html" class="proyecto-volver">← Volver</a>
+            <a href="${urlVolver}" class="proyecto-volver">← Volver a ${textoVolver}</a>
         </header>
 
         <main class="proyecto-main">
-            <div class="proyecto-banner">
+            <div class="${bannerClass}">
                 <div class="proyecto-banner-texto">
                     <div class="proyecto-header-info">
                         <h1 class="proyecto-titulo">${proyecto.nombre}</h1>
@@ -81,8 +93,10 @@ export function montarProyecto(contenedor, proyectoId) {
         </main>
     `;
 
-    // Arrancar carrusel del banner
-    iniciarCarruselBanner();
+    // Arrancar carrusel del banner (si lo hay)
+    if (tieneVisual) {
+        iniciarCarruselBanner();
+    }
 }
 
 // ============================================

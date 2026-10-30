@@ -36,6 +36,14 @@
     align-items: start;
 }
 
+/* Banner sin visual: el texto ocupa todo el ancho, centrado y limitado */
+.proyecto-banner-sin-visual {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ============================================
    TEXTO DEL BANNER (izquierda)
    ============================================ */
@@ -119,6 +127,7 @@
     transition: all var(--transicion);
     text-align: center;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .proyecto-btn-primario {
@@ -186,7 +195,7 @@
 
 /* Desktop ancho: 2 columnas (texto izq, visual der) */
 @media (min-width: 800px) {
-    .proyecto-banner {
+    .proyecto-banner:not(.proyecto-banner-sin-visual) {
         grid-template-columns: 1fr 1fr;
         gap: var(--esp-10);
     }
