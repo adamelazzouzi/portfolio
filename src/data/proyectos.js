@@ -95,5 +95,19 @@ export const proyectos = [
         url: 'https://estudio-kaze.pages.dev',
         repo: 'https://github.com/adamelazzouzi/estudio-kaze',
         disponible: true
+    },
+
+    {
+        id: 'taller-maza',
+        tipo: 'practica',
+        nombre: 'Taller Maza',
+        descripcionCorta: 'Web de una cerrajería e ingeniería industrial ficticia en Peralta de la Sierra (Huesca). Diseño técnico e industrial.',
+        descripcionLarga: 'Taller Maza es una web de una cerrajería e ingeniería industrial ficticia situada en Peralta de la Sierra, Huesca. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio industrial real: un taller de mecanizado de precisión, cerrajería industrial y forja a medida con más de 35 años de trayectoria. Incluye una one-page completa con hero, sobre nosotros, productos, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://taller-maza.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/taller-maza',
+        disponible: true
     }
 ];
