@@ -109,5 +109,19 @@ export const proyectos = [
         url: 'https://taller-maza.pages.dev',
         repo: 'https://github.com/adamelazzouzi/taller-maza',
         disponible: true
+    },
+
+    {
+        id: 'garrote-brasa',
+        tipo: 'practica',
+        nombre: 'Garrote & Brasa',
+        descripcionCorta: 'Web de un asador urbano ficticio en Torrejón del Berrocal (Cáceres). Diseño dark, agresivo y de fuego.',
+        descripcionLarga: 'Garrote & Brasa es una web de un asador urbano ficticio situado en Torrejón del Berrocal, Cáceres. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: un asador de barrio con parrilla de carbón, ahumados artesanales y una carta corta pero brutal. Incluye una one-page completa con hero, sobre nosotros, carta, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://garrote-brasa.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/garrote-brasa',
+        disponible: true
     }
 ];
