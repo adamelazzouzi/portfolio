@@ -123,5 +123,18 @@ export const proyectos = [
         url: 'https://garrote-brasa.pages.dev',
         repo: 'https://github.com/adamelazzouzi/garrote-brasa',
         disponible: true
+    },
+    {
+        id: 'surco-salvaje',
+        tipo: 'practica',
+        nombre: 'Surco Salvaje',
+        descripcionCorta: 'Web de una tienda de vinilos y cassettes ficticia en Cala del Pescador (Almería). Diseño retro-futurista synthwave.',
+        descripcionLarga: 'Surco Salvaje es una web de una tienda de vinilos y cassettes de segunda mano ficticia situada en Cala del Pescador, Almería. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una tienda de discos con cabina de escucha, club de escucha y encargos personalizados. Incluye una one-page completa con hero, sobre nosotros, productos con filtros interactivos, servicios, galería con lightbox, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios. La estética es retro-futurista synthwave con neón cian y púrpura sobre negro.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://surco-salvaje.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/surco-salvaje',
+        disponible: true
     }
 ];
