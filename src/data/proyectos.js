@@ -136,5 +136,18 @@ export const proyectos = [
         url: 'https://surco-salvaje.pages.dev',
         repo: 'https://github.com/adamelazzouzi/surco-salvaje',
         disponible: true
+    },
+    {
+        id: 'marea-seca',
+        tipo: 'practica',
+        nombre: 'Marea Seca',
+        descripcionCorta: 'Tienda online de papelería y objetos de escritorio artesanales con materiales marinos recuperados. Multipágina con carrito y checkout.',
+        descripcionLarga: 'Marea Seca es una tienda online de una papelería y objetos de escritorio artesanales hechos con maderas de barcos, cuerdas, redes y vidrio de mar recogidos en la costa. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una tienda online con 25 productos, variantes, personalización, carrito, checkout y confirmación de pedido. Incluye múltiples páginas (home, tienda, ficha de producto, carrito, checkout, pedido confirmado, sobre nosotros, contacto) y las páginas legales obligatorias (aviso legal, privacidad, cookies, devoluciones y envío). Todo el contenido se genera a partir de JSON, con placeholders SVG elegantes para las imágenes y animaciones ligeras en toda la web.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'LocalStorage', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://marea-seca.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/marea-seca',
+        disponible: true
     }
 ];
