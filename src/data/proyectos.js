@@ -7,16 +7,20 @@
 // 3. Listo
 //
 // Campos obligatorios:
-//   id, tipo, nombre, descripcionCorta, descripcionLarga,
-//   stack, año, capturasCarrusel, url, disponible
+//   id, tipo, categoria, nombre, descripcionCorta,
+//   descripcionLarga, stack, año, capturasCarrusel, url, disponible
 //
 // tipo: 'juego' | 'practica'
+// categoria (solo para prácticas): 'general' | 'estudios'
 //
 // Si disponible: false → la tarjeta se muestra bloqueada
 // y al pulsar sale un toast "Próximamente".
 // ============================================
 
 export const proyectos = [
+    // ============================================
+    // MINIJUEGOS
+    // ============================================
     {
         id: 'quevedle',
         tipo: 'juego',
@@ -69,9 +73,13 @@ export const proyectos = [
         disponible: true
     },
 
+    // ============================================
+    // PRÁCTICAS - VARIOS SECTORES
+    // ============================================
     {
         id: 'la-hilandera',
         tipo: 'practica',
+        categoria: 'general',
         nombre: 'La Hilandera',
         descripcionCorta: 'Web de una librería-cafetería ficticia en Villanueva del Río (Zamora). Diseño artesanal y cálido.',
         descripcionLarga: 'La Hilandera es una web de una librería-cafetería ficticia situada en Villanueva del Río, Zamora. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una librería de pueblo con cafetería y taller de encuadernación artesanal. Incluye una one-page completa con hero, sobre nosotros, productos, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
@@ -82,10 +90,10 @@ export const proyectos = [
         repo: 'https://github.com/adamelazzouzi/la-hilandera',
         disponible: true
     },
-
     {
         id: 'estudio-kaze',
         tipo: 'practica',
+        categoria: 'general',
         nombre: 'Estudio Kaze',
         descripcionCorta: 'Web de una peluquería de autor ficticia en Candelaria del Monte (Girona). Diseño minimalista japandi.',
         descripcionLarga: 'Estudio Kaze es una web de una peluquería de autor ficticia situada en Candelaria del Monte, Girona. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una peluquería de autor con estética sostenible, coloración orgánica y tratamientos capilares personalizados. Incluye una one-page completa con hero, sobre nosotros, servicios, productos, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
@@ -96,10 +104,10 @@ export const proyectos = [
         repo: 'https://github.com/adamelazzouzi/estudio-kaze',
         disponible: true
     },
-
     {
         id: 'taller-maza',
         tipo: 'practica',
+        categoria: 'general',
         nombre: 'Taller Maza',
         descripcionCorta: 'Web de una cerrajería e ingeniería industrial ficticia en Peralta de la Sierra (Huesca). Diseño técnico e industrial.',
         descripcionLarga: 'Taller Maza es una web de una cerrajería e ingeniería industrial ficticia situada en Peralta de la Sierra, Huesca. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio industrial real: un taller de mecanizado de precisión, cerrajería industrial y forja a medida con más de 35 años de trayectoria. Incluye una one-page completa con hero, sobre nosotros, productos, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
@@ -110,10 +118,10 @@ export const proyectos = [
         repo: 'https://github.com/adamelazzouzi/taller-maza',
         disponible: true
     },
-
     {
         id: 'garrote-brasa',
         tipo: 'practica',
+        categoria: 'general',
         nombre: 'Garrote & Brasa',
         descripcionCorta: 'Web de un asador urbano ficticio en Torrejón del Berrocal (Cáceres). Diseño dark, agresivo y de fuego.',
         descripcionLarga: 'Garrote & Brasa es una web de un asador urbano ficticio situado en Torrejón del Berrocal, Cáceres. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: un asador de barrio con parrilla de carbón, ahumados artesanales y una carta corta pero brutal. Incluye una one-page completa con hero, sobre nosotros, carta, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
@@ -127,6 +135,7 @@ export const proyectos = [
     {
         id: 'surco-salvaje',
         tipo: 'practica',
+        categoria: 'general',
         nombre: 'Surco Salvaje',
         descripcionCorta: 'Web de una tienda de vinilos y cassettes ficticia en Cala del Pescador (Almería). Diseño retro-futurista synthwave.',
         descripcionLarga: 'Surco Salvaje es una web de una tienda de vinilos y cassettes de segunda mano ficticia situada en Cala del Pescador, Almería. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una tienda de discos con cabina de escucha, club de escucha y encargos personalizados. Incluye una one-page completa con hero, sobre nosotros, productos con filtros interactivos, servicios, galería con lightbox, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios. La estética es retro-futurista synthwave con neón cian y púrpura sobre negro.',
@@ -140,6 +149,7 @@ export const proyectos = [
     {
         id: 'marea-seca',
         tipo: 'practica',
+        categoria: 'general',
         nombre: 'Marea Seca',
         descripcionCorta: 'Tienda online de papelería y objetos de escritorio artesanales con materiales marinos recuperados. Multipágina con carrito y checkout.',
         descripcionLarga: 'Marea Seca es una tienda online de una papelería y objetos de escritorio artesanales hechos con maderas de barcos, cuerdas, redes y vidrio de mar recogidos en la costa. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una tienda online con 25 productos, variantes, personalización, carrito, checkout y confirmación de pedido. Incluye múltiples páginas (home, tienda, ficha de producto, carrito, checkout, pedido confirmado, sobre nosotros, contacto) y las páginas legales obligatorias (aviso legal, privacidad, cookies, devoluciones y envío). Todo el contenido se genera a partir de JSON, con placeholders SVG elegantes para las imágenes y animaciones ligeras en toda la web.',
@@ -150,4 +160,9 @@ export const proyectos = [
         repo: 'https://github.com/adamelazzouzi/marea-seca',
         disponible: true
     }
+
+    // ============================================
+    // PRÁCTICAS - ESTUDIOS Y AGENCIAS
+    // (se añadirán las 10 cuando las generemos)
+    // ============================================
 ];

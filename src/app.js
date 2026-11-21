@@ -6,16 +6,20 @@
 import { montarInicio } from './ui/inicio.js';
 import { montarMinijuegos } from './ui/minijuegos.js';
 import { montarPracticas } from './ui/practicas.js';
+import { montarPracticasGenerales } from './ui/practicas-generales.js';
+import { montarPracticasEstudios } from './ui/practicas-estudios.js';
 import { montarProyecto } from './ui/proyecto.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const app = document.getElementById('app');
-
-    // Detectar página por el nombre del archivo (sin extensión, por si Cloudflare la quita)
     const path = window.location.pathname.toLowerCase();
 
     if (path.includes('minijuegos')) {
         montarMinijuegos(app);
+    } else if (path.includes('practicas-generales')) {
+        montarPracticasGenerales(app);
+    } else if (path.includes('practicas-estudios')) {
+        montarPracticasEstudios(app);
     } else if (path.includes('practicas')) {
         montarPracticas(app);
     } else if (path.includes('proyecto')) {
@@ -23,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const proyectoId = params.get('id');
         montarProyecto(app, proyectoId);
     } else {
-        // index.html o raíz
         montarInicio(app);
     }
 });

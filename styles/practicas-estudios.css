@@ -1,0 +1,187 @@
+/* ============================================
+   PRÁCTICAS DE WEBS · ESTUDIOS Y AGENCIAS
+   ============================================ */
+
+.seccion-header {
+    padding: var(--esp-4) 0 var(--esp-8);
+    border-bottom: 1px solid var(--gris-850);
+    margin-bottom: var(--esp-8);
+    text-align: center;
+}
+
+.seccion-volver {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gris-400);
+    padding: 8px 12px;
+    border-radius: var(--radio-sm);
+    transition: all var(--transicion);
+    margin-bottom: var(--esp-4);
+}
+
+.seccion-volver:hover {
+    color: var(--blanco);
+    background: var(--gris-900);
+}
+
+.seccion-titulo-header {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin: 0 0 var(--esp-2);
+    background: linear-gradient(180deg, var(--blanco) 0%, var(--gris-300) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.seccion-subtitulo-header {
+    font-size: 14px;
+    color: var(--gris-400);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   ESTADO VACÍO
+   ============================================ */
+.practicas-vacio {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--esp-4);
+    padding: var(--esp-12) var(--esp-6);
+    background: var(--gris-950);
+    border: 1px dashed var(--gris-800);
+    border-radius: var(--radio-md);
+    text-align: center;
+}
+
+.practicas-vacio-icono {
+    font-size: 72px;
+    line-height: 1;
+    opacity: 0.5;
+}
+
+.practicas-vacio-titulo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gris-300);
+    margin: 0;
+}
+
+.practicas-vacio-descripcion {
+    font-size: 15px;
+    color: var(--gris-500);
+    max-width: 400px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================
+   TARJETA RECTANGULAR PARA PRÁCTICAS
+   ============================================ */
+.practicas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--esp-5);
+    margin-bottom: var(--esp-10);
+}
+
+.proyecto-card-practica {
+    background: var(--gris-950);
+    border: 1px solid var(--gris-850);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transicion);
+    padding: var(--esp-6);
+    display: flex;
+    align-items: center;
+}
+
+.proyecto-card-practica:hover {
+    border-color: var(--gris-600);
+    background: var(--gris-900);
+    transform: translateY(-4px);
+}
+
+.proyecto-info-practica {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-2);
+    width: 100%;
+}
+
+.proyecto-header-practica {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--esp-3);
+}
+
+.proyecto-info-practica .proyecto-nombre {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--blanco);
+    margin: 0;
+}
+
+.proyecto-info-practica .proyecto-año {
+    font-family: var(--fuente-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gris-500);
+    flex-shrink: 0;
+}
+
+.proyecto-info-practica .proyecto-descripcion {
+    font-size: 14px;
+    color: var(--gris-300);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.proyecto-ver {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gris-400);
+    margin-top: var(--esp-3);
+    transition: color var(--transicion);
+}
+
+.proyecto-card-practica:hover .proyecto-ver {
+    color: var(--blanco);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (min-width: 700px) {
+    .practicas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .seccion-titulo-header {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 600px) {
+    .seccion-titulo-header {
+        font-size: 32px;
+    }
+
+    .proyecto-card-practica {
+        padding: var(--esp-5);
+    }
+
+    .proyecto-info-practica .proyecto-nombre {
+        font-size: 20px;
+    }
+}

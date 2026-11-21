@@ -1,5 +1,5 @@
 /* ============================================
-   PÁGINA DE PRÁCTICAS DE WEBS
+   HOME DE PRÁCTICAS DE WEBS
    ============================================ */
 
 .seccion-header {
@@ -45,10 +45,16 @@
 }
 
 /* ============================================
-   ESTADO VACÍO
+   SECCIONES DE PRÁCTICAS (2 tarjetas grandes)
    ============================================ */
-.practicas-vacio {
-    grid-column: 1 / -1;
+.practicas-secciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--esp-6);
+    margin-bottom: var(--esp-10);
+}
+
+.practica-seccion-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,104 +62,45 @@
     gap: var(--esp-4);
     padding: var(--esp-12) var(--esp-6);
     background: var(--gris-950);
-    border: 1px dashed var(--gris-800);
-    border-radius: var(--radio-md);
-    text-align: center;
-}
-
-.practicas-vacio-icono {
-    font-size: 72px;
-    line-height: 1;
-    opacity: 0.5;
-}
-
-.practicas-vacio-titulo {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--gris-300);
-    margin: 0;
-}
-
-.practicas-vacio-descripcion {
-    font-size: 15px;
-    color: var(--gris-500);
-    max-width: 400px;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* ============================================
-   GRID DE PROYECTOS (para cuando haya prácticas)
-   ============================================ */
-.proyectos-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--esp-6);
-    margin-bottom: var(--esp-10);
-}
-
-.proyecto-card {
-    background: var(--gris-950);
     border: 1px solid var(--gris-850);
     border-radius: var(--radio-md);
-    overflow: hidden;
-    cursor: pointer;
-    transition: all var(--transicion);
-}
-
-.proyecto-card:hover {
-    border-color: var(--gris-600);
-    transform: translateY(-4px);
-    background: var(--gris-900);
-}
-
-.proyecto-visual {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: var(--gris-900);
-    overflow: hidden;
-}
-
-.proyecto-imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.proyecto-info {
-    padding: var(--esp-5);
-}
-
-.proyecto-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: var(--esp-3);
-    gap: var(--esp-3);
-}
-
-.proyecto-nombre {
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    text-align: center;
     color: var(--blanco);
+    transition: all var(--transicion);
+    text-decoration: none;
+    min-height: 280px;
+}
+
+.practica-seccion-card:hover {
+    border-color: var(--gris-600);
+    background: var(--gris-900);
+    transform: translateY(-4px);
+}
+
+.practica-seccion-icono {
+    font-size: 64px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: transform var(--transicion);
+}
+
+.practica-seccion-card:hover .practica-seccion-icono {
+    transform: scale(1.05);
+}
+
+.practica-seccion-titulo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
     margin: 0;
+    color: var(--blanco);
 }
 
-.proyecto-año {
-    font-family: var(--fuente-mono);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--gris-500);
-    flex-shrink: 0;
-}
-
-.proyecto-descripcion {
-    font-size: 14px;
-    color: var(--gris-300);
+.practica-seccion-descripcion {
+    font-size: 15px;
+    color: var(--gris-400);
     line-height: 1.6;
+    max-width: 400px;
     margin: 0;
 }
 
@@ -161,7 +108,7 @@
    RESPONSIVE
    ============================================ */
 @media (min-width: 700px) {
-    .proyectos-grid {
+    .practicas-secciones {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -175,104 +122,16 @@
         font-size: 32px;
     }
 
-    .proyecto-nombre {
-        font-size: 20px;
+    .practica-seccion-card {
+        padding: var(--esp-8) var(--esp-5);
+        min-height: 240px;
     }
 
-    .proyecto-info {
-        padding: var(--esp-4);
-    }
-}
-
-/* ============================================
-   TARJETA RECTANGULAR PARA PRÁCTICAS
-   ============================================ */
-.practicas-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--esp-5);
-    margin-bottom: var(--esp-10);
-}
-
-.proyecto-card-practica {
-    background: var(--gris-950);
-    border: 1px solid var(--gris-850);
-    border-radius: var(--radio-md);
-    overflow: hidden;
-    cursor: pointer;
-    transition: all var(--transicion);
-    padding: var(--esp-6);
-    display: flex;
-    align-items: center;
-}
-
-.proyecto-card-practica:hover {
-    border-color: var(--gris-600);
-    background: var(--gris-900);
-    transform: translateY(-4px);
-}
-
-.proyecto-info-practica {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-2);
-    width: 100%;
-}
-
-.proyecto-header-practica {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--esp-3);
-}
-
-.proyecto-info-practica .proyecto-nombre {
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: var(--blanco);
-    margin: 0;
-}
-
-.proyecto-info-practica .proyecto-año {
-    font-family: var(--fuente-mono);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--gris-500);
-    flex-shrink: 0;
-}
-
-.proyecto-info-practica .proyecto-descripcion {
-    font-size: 14px;
-    color: var(--gris-300);
-    line-height: 1.6;
-    margin: 0;
-}
-
-.proyecto-ver {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gris-400);
-    margin-top: var(--esp-3);
-    transition: color var(--transicion);
-}
-
-.proyecto-card-practica:hover .proyecto-ver {
-    color: var(--blanco);
-}
-
-@media (min-width: 700px) {
-    .practicas-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .proyecto-card-practica {
-        padding: var(--esp-5);
+    .practica-seccion-icono {
+        font-size: 48px;
     }
 
-    .proyecto-info-practica .proyecto-nombre {
-        font-size: 20px;
+    .practica-seccion-titulo {
+        font-size: 24px;
     }
 }

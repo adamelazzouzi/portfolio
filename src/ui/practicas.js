@@ -1,11 +1,14 @@
 // ============================================
-// UI - PÁGINA DE PRÁCTICAS DE WEBS
+// UI - HOME DE PRÁCTICAS DE WEBS
+// 2 tarjetas grandes: Varios Sectores y Estudios y Agencias
 // ============================================
 
 import { proyectos } from '../data/proyectos.js';
 
 export function montarPracticas(contenedor) {
     const practicas = proyectos.filter(p => p.tipo === 'practica');
+    const generales = practicas.filter(p => p.categoria === 'general');
+    const estudios = practicas.filter(p => p.categoria === 'estudios');
 
     contenedor.innerHTML = `
         <header class="seccion-header">
@@ -14,43 +17,22 @@ export function montarPracticas(contenedor) {
             <p class="seccion-subtitulo-header">${practicas.length} webs de negocios ficticios</p>
         </header>
 
-        ${practicas.length === 0
-            ? `<div class="contenedor"><div class="practicas-vacio">
-                 <div class="practicas-vacio-icono">🌐</div>
-                 <h2 class="practicas-vacio-titulo">Próximamente</h2>
-                 <p class="practicas-vacio-descripcion">Estamos trabajando en las primeras prácticas de webs. Vuelve pronto.</p>
-               </div></div>`
-            : `<div class="contenedor">
-                 <div class="practicas-grid">
-                   ${practicas.map(practica => renderizarPractica(practica)).join('')}
-                 </div>
-               </div>`
-        }
+        <div class="practicas-secciones">
+            <a href="practicas-generales.html" class="practica-seccion-card">
+                <div class="practica-seccion-icono">🌐</div>
+                <h2 class="practica-seccion-titulo">Varios Sectores</h2>
+                <p class="practica-seccion-descripcion">${generales.length} webs de negocios locales de distintos sectores: librería, peluquería, taller, asador, tienda de discos y papelería.</p>
+            </a>
+
+            <a href="practicas-estudios.html" class="practica-seccion-card">
+                <div class="practica-seccion-icono">🏢</div>
+                <h2 class="practica-seccion-titulo">Estudios y Agencias</h2>
+                <p class="practica-seccion-descripcion">${estudios.length} webs de estudios y agencias de servicios profesionales. Especialización en landing pages para empresas.</p>
+            </a>
+        </div>
 
         <footer class="inicio-footer">
             <p>Proyecto personal. Construido sin frameworks, sin dependencias.</p>
         </footer>
-    `;
-
-    contenedor.querySelectorAll('.proyecto-card-practica').forEach(card => {
-        card.addEventListener('click', () => {
-            const id = card.getAttribute('data-id');
-            window.location.href = `proyecto.html?id=${id}`;
-        });
-    });
-}
-
-function renderizarPractica(practica) {
-    return `
-        <article class="proyecto-card-practica" data-id="${practica.id}">
-            <div class="proyecto-info-practica">
-                <div class="proyecto-header-practica">
-                    <h3 class="proyecto-nombre">${practica.nombre}</h3>
-                    <span class="proyecto-año">${practica.año}</span>
-                </div>
-                <p class="proyecto-descripcion">${practica.descripcionCorta}</p>
-                <span class="proyecto-ver">Ver proyecto →</span>
-            </div>
-        </article>
     `;
 }
