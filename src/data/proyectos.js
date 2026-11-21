@@ -159,10 +159,23 @@ export const proyectos = [
         url: 'https://marea-seca.pages.dev',
         repo: 'https://github.com/adamelazzouzi/marea-seca',
         disponible: true
-    }
+    },
 
     // ============================================
     // PRÁCTICAS - ESTUDIOS Y AGENCIAS
-    // (se añadirán las 10 cuando las generemos)
     // ============================================
+    {
+        id: 'oficio-y-piedra',
+        tipo: 'practica',
+        categoria: 'estudios',
+        nombre: 'Oficio y Piedra',
+        descripcionCorta: 'Web de un estudio de arquitectura ficticio en Briones (La Rioja).',
+        descripcionLarga: 'Próximamente...',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://oficio-y-piedra.pages.dev/',
+        repo: 'https://github.com/adamelazzouzi/oficio-y-piedra',
+        disponible: true
+    }
 ];
