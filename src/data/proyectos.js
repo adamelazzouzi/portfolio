@@ -177,5 +177,19 @@ export const proyectos = [
         url: 'https://oficio-y-piedra.pages.dev/',
         repo: 'https://github.com/adamelazzouzi/oficio-y-piedra',
         disponible: true
-    }
+    },
+    {
+        id: 'raiz-y-sombra',
+        tipo: 'practica',
+        categoria: 'estudios',
+        nombre: 'Raíz y Sombra',
+        descripcionCorta: 'Web de un estudio de paisajismo ficticio en Pedraza (Segovia). Diseño botánico y editorial.',
+        descripcionLarga: 'Raíz y Sombra es una web de un estudio de paisajismo ficticio situado en Pedraza, Segovia. Es una práctica de diseño y desarrollo web que simula el encargo de un estudio especializado en jardines mediterráneos, xerojardinería y recuperación de patios tradicionales. Destaca por su arquitectura modular basada en JSON, su estética de "cuaderno de naturalista" con tipografías serif editoriales (Cormorant Garamond) y secciones únicas como un índice botánico interactivo, un selector de estaciones del año y un cuaderno de campo con crónicas estacionales. Todo construido con HTML, CSS y JavaScript vanilla, sin frameworks.',
+        stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
+        año: 2026,
+        capturasCarrusel: [],
+        url: 'https://raiz-y-sombra.pages.dev',
+        repo: 'https://github.com/adamelazzouzi/raiz-y-sombra',
+        disponible: true
+    },
 ];
