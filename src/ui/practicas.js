@@ -21,13 +21,13 @@ export function montarPracticas(contenedor) {
             <a href="practicas-generales.html" class="practica-seccion-card">
                 <div class="practica-seccion-icono">🌐</div>
                 <h2 class="practica-seccion-titulo">Varios Sectores</h2>
-                <p class="practica-seccion-descripcion">${generales.length} webs de negocios locales de distintos sectores: librería, peluquería, taller, asador, tienda de discos y papelería.</p>
+                <p class="practica-seccion-descripcion">${generales.length} webs de negocios locales de distintos sectores.</p>
             </a>
 
             <a href="practicas-estudios.html" class="practica-seccion-card">
                 <div class="practica-seccion-icono">🏢</div>
                 <h2 class="practica-seccion-titulo">Estudios y Agencias</h2>
-                <p class="practica-seccion-descripcion">${estudios.length} webs de estudios y agencias de servicios profesionales. Especialización en landing pages para empresas.</p>
+                <p class="practica-seccion-descripcion">${estudios.length} webs de estudios y agencias de servicios profesionales.</p>
             </a>
         </div>
 

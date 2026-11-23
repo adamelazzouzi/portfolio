@@ -23,7 +23,7 @@ export function montarInicio(contenedor) {
                     </svg>
                 </div>
                 <h2 class="seccion-titulo">Minijuegos</h2>
-                <p class="seccion-descripcion">Juegos interactivos para adivinar canciones de tus artistas favoritos.</p>
+                <p class="seccion-descripcion">Juegos interactivos para adivinar canciones de varios artistas. Cada artista tiene su juego individual.</p>
             </a>
 
             <a href="practicas.html" class="seccion-card">

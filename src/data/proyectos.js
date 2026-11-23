@@ -77,12 +77,12 @@ export const proyectos = [
     // PRÁCTICAS - VARIOS SECTORES
     // ============================================
     {
-        id: 'la-hilandera',
+        id: 'practica-01',
         tipo: 'practica',
         categoria: 'general',
-        nombre: 'La Hilandera',
-        descripcionCorta: 'Web de una librería-cafetería ficticia en Villanueva del Río (Zamora). Diseño artesanal y cálido.',
-        descripcionLarga: 'La Hilandera es una web de una librería-cafetería ficticia situada en Villanueva del Río, Zamora. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una librería de pueblo con cafetería y taller de encuadernación artesanal. Incluye una one-page completa con hero, sobre nosotros, productos, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        nombre: 'Práctica 01',
+        descripcionCorta: 'Web de una librería-cafetería ficticia en Villanueva del Río (Zamora).',
+        descripcionLarga: 'Web 01',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -91,12 +91,12 @@ export const proyectos = [
         disponible: true
     },
     {
-        id: 'estudio-kaze',
+        id: 'practica-02',
         tipo: 'practica',
         categoria: 'general',
-        nombre: 'Estudio Kaze',
-        descripcionCorta: 'Web de una peluquería de autor ficticia en Candelaria del Monte (Girona). Diseño minimalista japandi.',
-        descripcionLarga: 'Estudio Kaze es una web de una peluquería de autor ficticia situada en Candelaria del Monte, Girona. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una peluquería de autor con estética sostenible, coloración orgánica y tratamientos capilares personalizados. Incluye una one-page completa con hero, sobre nosotros, servicios, productos, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        nombre: 'Práctica 02',
+        descripcionCorta: 'Web de una peluquería de autor ficticia en Candelaria del Monte (Girona).',
+        descripcionLarga: 'Web 02',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -105,12 +105,12 @@ export const proyectos = [
         disponible: true
     },
     {
-        id: 'taller-maza',
+        id: 'practica-03',
         tipo: 'practica',
         categoria: 'general',
-        nombre: 'Taller Maza',
-        descripcionCorta: 'Web de una cerrajería e ingeniería industrial ficticia en Peralta de la Sierra (Huesca). Diseño técnico e industrial.',
-        descripcionLarga: 'Taller Maza es una web de una cerrajería e ingeniería industrial ficticia situada en Peralta de la Sierra, Huesca. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio industrial real: un taller de mecanizado de precisión, cerrajería industrial y forja a medida con más de 35 años de trayectoria. Incluye una one-page completa con hero, sobre nosotros, productos, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        nombre: 'Práctica 03',
+        descripcionCorta: 'Web de una cerrajería e ingeniería industrial ficticia en Peralta de la Sierra (Huesca).',
+        descripcionLarga: 'Web 03',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -119,12 +119,12 @@ export const proyectos = [
         disponible: true
     },
     {
-        id: 'garrote-brasa',
+        id: 'practica-04',
         tipo: 'practica',
         categoria: 'general',
-        nombre: 'Garrote & Brasa',
-        descripcionCorta: 'Web de un asador urbano ficticio en Torrejón del Berrocal (Cáceres). Diseño dark, agresivo y de fuego.',
-        descripcionLarga: 'Garrote & Brasa es una web de un asador urbano ficticio situado en Torrejón del Berrocal, Cáceres. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: un asador de barrio con parrilla de carbón, ahumados artesanales y una carta corta pero brutal. Incluye una one-page completa con hero, sobre nosotros, carta, servicios, galería, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios.',
+        nombre: 'Práctica 04',
+        descripcionCorta: 'Web de un asador urbano ficticio en Torrejón del Berrocal (Cáceres).',
+        descripcionLarga: 'Web 04',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -133,12 +133,12 @@ export const proyectos = [
         disponible: true
     },
     {
-        id: 'surco-salvaje',
+        id: 'practica-05',
         tipo: 'practica',
         categoria: 'general',
-        nombre: 'Surco Salvaje',
-        descripcionCorta: 'Web de una tienda de vinilos y cassettes ficticia en Cala del Pescador (Almería). Diseño retro-futurista synthwave.',
-        descripcionLarga: 'Surco Salvaje es una web de una tienda de vinilos y cassettes de segunda mano ficticia situada en Cala del Pescador, Almería. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una tienda de discos con cabina de escucha, club de escucha y encargos personalizados. Incluye una one-page completa con hero, sobre nosotros, productos con filtros interactivos, servicios, galería con lightbox, testimonios, preguntas frecuentes, equipo y contacto, además de las páginas legales obligatorias (aviso legal, privacidad y cookies). Todo el contenido se genera a partir de un JSON con los datos del negocio, lo que permite reutilizar la estructura para otros negocios ficticios. La estética es retro-futurista synthwave con neón cian y púrpura sobre negro.',
+        nombre: 'Práctica 05',
+        descripcionCorta: 'Web de una tienda de vinilos y cassettes ficticia en Cala del Pescador (Almería).',
+        descripcionLarga: 'Web 05',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -147,12 +147,12 @@ export const proyectos = [
         disponible: true
     },
     {
-        id: 'marea-seca',
+        id: 'practica-06',
         tipo: 'practica',
         categoria: 'general',
-        nombre: 'Marea Seca',
+        nombre: 'Práctica 06',
         descripcionCorta: 'Tienda online de papelería y objetos de escritorio artesanales con materiales marinos recuperados. Multipágina con carrito y checkout.',
-        descripcionLarga: 'Marea Seca es una tienda online de una papelería y objetos de escritorio artesanales hechos con maderas de barcos, cuerdas, redes y vidrio de mar recogidos en la costa. Es una práctica de diseño y desarrollo web que simula el encargo de un negocio local real: una tienda online con 25 productos, variantes, personalización, carrito, checkout y confirmación de pedido. Incluye múltiples páginas (home, tienda, ficha de producto, carrito, checkout, pedido confirmado, sobre nosotros, contacto) y las páginas legales obligatorias (aviso legal, privacidad, cookies, devoluciones y envío). Todo el contenido se genera a partir de JSON, con placeholders SVG elegantes para las imágenes y animaciones ligeras en toda la web.',
+        descripcionLarga: 'Web 06',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'LocalStorage', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -165,12 +165,12 @@ export const proyectos = [
     // PRÁCTICAS - ESTUDIOS Y AGENCIAS
     // ============================================
     {
-        id: 'oficio-y-piedra',
+        id: 'practica-07',
         tipo: 'practica',
         categoria: 'estudios',
-        nombre: 'Oficio y Piedra',
+        nombre: 'Práctica 07',
         descripcionCorta: 'Web de un estudio de arquitectura ficticio en Briones (La Rioja).',
-        descripcionLarga: 'Próximamente...',
+        descripcionLarga: 'Web 07',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
@@ -179,12 +179,12 @@ export const proyectos = [
         disponible: true
     },
     {
-        id: 'raiz-y-sombra',
+        id: 'practica-08',
         tipo: 'practica',
         categoria: 'estudios',
-        nombre: 'Raíz y Sombra',
+        nombre: 'Práctica 08',
         descripcionCorta: 'Web de un estudio de paisajismo ficticio en Pedraza (Segovia). Diseño botánico y editorial.',
-        descripcionLarga: 'Raíz y Sombra es una web de un estudio de paisajismo ficticio situado en Pedraza, Segovia. Es una práctica de diseño y desarrollo web que simula el encargo de un estudio especializado en jardines mediterráneos, xerojardinería y recuperación de patios tradicionales. Destaca por su arquitectura modular basada en JSON, su estética de "cuaderno de naturalista" con tipografías serif editoriales (Cormorant Garamond) y secciones únicas como un índice botánico interactivo, un selector de estaciones del año y un cuaderno de campo con crónicas estacionales. Todo construido con HTML, CSS y JavaScript vanilla, sin frameworks.',
+        descripcionLarga: 'Web 08',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
         capturasCarrusel: [],
