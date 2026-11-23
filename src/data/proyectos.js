@@ -183,7 +183,7 @@ export const proyectos = [
         tipo: 'practica',
         categoria: 'estudios',
         nombre: 'Práctica 08',
-        descripcionCorta: 'Web de un estudio de paisajismo ficticio en Pedraza (Segovia). Diseño botánico y editorial.',
+        descripcionCorta: 'Web de un estudio de paisajismo ficticio en Pedraza (Segovia).',
         descripcionLarga: 'Web 08',
         stack: ['HTML', 'CSS', 'JavaScript', 'Módulos ES', 'Cloudflare Pages'],
         año: 2026,
